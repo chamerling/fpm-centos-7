@@ -5,7 +5,7 @@ services:
 
 before_install:
   - export BUILD_ID=${TRAVIS_COMMIT::8}
-  - export ESN_REPO=linagofab/fpm-centos-7
+  - export ESN_REPO=linagora/fpm-centos-7
   - export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo $TRAVIS_TAG ; fi`
   - docker build -t $ESN_REPO:$BUILD_ID .
   - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
